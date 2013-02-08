@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>
+Html Editor
+</title>
+<style type="text/css">
+#window1 p {
+	margin: 0;
+}
+#window2 p {
+	margin: 0;
+}
+</style>
+<script type="text/javascript">
+function clearwindow1(){
+	var window1contents = document.getElementById('window1').innerHTML;
+	var window2contents = document.getElementById('window2').innerHTML;
+	if(window1contents == "<I>Edit Window</I>"){
+	document.getElementById('window1').innerHTML = "";
+	}
+	if(window2contents == "<I>Viewing Window</I>"){
+	document.getElementById('window2').innerHTML = "";
+	}
+}
+function transfer(){
+	var window1contents = document.getElementById('window1').innerHTML;
+	document.getElementById('window2').innerHTML = window1contents;
+}
+function reset(){
+	document.getElementById('window1').innerHTML = "<i>Edit Window</i>";
+	document.getElementById('window2').innerHTML = "<i>Viewing Window</i>";
+}
+</script>
+</head>
+<body style="background-color:grey;">
+	<div style="float:left; width:100px; height:60%; background-color:grey;"></div>
+	<div style="float:left; width:640px; height:755px; background-color:white; border: 3px darkgrey solid; background-image:url(test.png);" id="window1" onclick="clearwindow1()" onkeyup="transfer()" contenteditable><i>Edit Window</i></div>
+	<div style="float:left; width:100px; height:60%; background-color:grey;"></div>
+	<div style="float:left; width:640px; height:755px; background-color:white; border: 3px darkgrey solid; background-image:url(test.png);" id="window2" contenteditable><i>Viewing Window</i></div>
+	<div style="float:left; width:200px; height:60%; background-color:grey;"></div>
+	<br />
+	<input type="button" value="Reset" onclick="reset()">
+</body>
+</html>

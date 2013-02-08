@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Rte</title>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<style>
+#rte {
+width:640px;
+height:755px;
+border: 1px solid #c0c0c0;
+background-image:url(test.png);
+}
+
+#menu {
+width:400px;
+height:20px;
+border: 1px solid #c0c0c0;
+background-color:#efefef;
+}
+.options {
+ cursor:pointer;
+ color: #000000;Verdana, Arial, Helvetica, sans-serif;
+ font-size:16px;
+ margin-left:3px;
+ margin-right:3px;
+}
+a {
+ text-decoration:none;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+ $('#rte').focus();
+ $('#bold').click(function(){document.execCommand('bold', false, null);$('#rte').focus();return false;});
+ $('#italic').click(function(){document.execCommand('italic', false, null);$('#rte').focus();return false;});
+ $('#underline').click(function(){document.execCommand('underline', false, null);$('#rte').focus();return false;});
+	$('select#fontChanger').change(function() { 
+		//--alert($(this).val());
+	    var fname = $(this).val();
+		document.execCommand("fontName", false, fname);	$('#rte').focus();return false;
+		//--document.execCommand("fontSize", false, "30px");
+	});
+	
+	$('select#fontsize').change(function() { 
+		//--alert($(this).val());
+	    var fsize = $(this).val();
+		document.execCommand("fontSize", false, fsize);	$('#rte').focus();return false;
+		//--document.execCommand("fontSize", false, "30px");
+	});
+	
+});
+</script>
+</head>
+<body>
+ <div id="menu">
+  <a id="bold" href="#"><b>B</b></a>
+  <a id="italic" href="#" class="options"><b><i>I</i></b></a>
+  <a id="underline" href="#" class="options"><b><u>U</u></b></a>
+  font Name <select id="fontChanger">
+  <option value="Arial">Arial</option>
+  <option value="Tahoma">Tahoma</option>
+</select>
+ font-size <select id="fontsize">
+  <option value="10px">10</option>
+  <option value="20px">20</option>
+  <option value="30px">30</option>
+  <option value="40px">40</option>
+  <option value="50px">50</option>
+  <option value="60px">60</option>
+</select>
+ </div>
+    <div id="rte" contenteditable="true" unselectable="off" >Incorporate a Rich Text Editor widget with easy formatting and WYSIWYG [14] display. Typically, the widget looks like a mini word processor: a toolbar on top with a rich editing area underneath. The editing area is usually a div, rather than a textarea, meaning that any HTML content is possible.</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html> 
+<head> 
+<title></title> 
+<style>
+#iView {
+width:640px;
+height:755px;
+border: 1px solid #c0c0c0;
+background-image:url(test.png);
+}
+</style>
+
+<script language="Javascript">
+
+function Init() 
+
+{ 
+iView.document.designMode = 'On'; 
+}
+function bold() 
+{ 
+iView.document.execCommand('bold', false, null); 
+}
+function italic() 
+{ 
+iView.document.execCommand('italic', false, null); 
+}
+function underline() 
+{ 
+iView.document.execCommand('underline', false, null); 
+}
+function font(fontname)
+{
+iView.document.execCommand(style.font-family:+fontname;, true, null);
+}
+</script>
+
+
+<body onload="Init()">
+<input type="button" onclick="bold()" value="B">
+<input type="button" onclick="italic()" value="I">
+<input type="button" onclick="underline()" value="U">
+
+<select name="fontChanger" onchange="font(document.quest.fontChanger.value)">
+  <option value="Arial">Arial</option>
+  <option value="Tahoma">Tahoma</option>
+</select>
+
+<br />
+
+<div id="iView" contenteditable="true" unselectable="off" >
+Incorporate a Rich Text Editor widget with easy formatting
+</div>
+<br><br>
+</body> 
+
+</html>

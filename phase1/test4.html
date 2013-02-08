@@ -1,0 +1,16 @@
+<head>
+    <script type="text/javascript">
+        function GetFont () {
+            alert (document.queryCommandValue('fontname'));
+        }
+    </script>
+</head>
+<body>
+    <div contenteditable="true">
+        <span style="font-family:arial;border: 1px solid #c0c0c0;">Some text in Arial font.</span>
+        <br />
+        <span style="font-family:verdana;border: 1px solid #c0c0c0;">Some text in Verdana font.</span>
+    </div>
+    <br /><br />
+    <button onclick="GetFont ();">Get the font name of the selected text!</button>
+</body>
